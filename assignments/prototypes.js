@@ -73,7 +73,7 @@ Hero.prototype.attack = function(target, value) {
   if (damage <= 0) {
     return `${target.name} was removed from the game.`
   } else {
-    return damage
+    return target.healthPoints = damage
   }
 }
 
@@ -87,7 +87,7 @@ Villain.prototype.attack = function(target, value) {
   if (damage <= 0) {
     return `${target.name} was removed from the game.`
   } else {
-    return damage
+    return target.healthPoints = damage
   }
 }
 
@@ -195,8 +195,19 @@ Villain.prototype.attack = function(target, value) {
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-  console.log(bill.attack(ted, 15))
-  console.log(ted.attack(bill, 11))
+  ted.attack(bill, 5)
+  console.log(bill)
+  bill.attack(ted, 7)
+  console.log(ted)
+  ted.attack(bill, 6)
+  console.log(bill)
+  console.log(bill.attack(ted, 8))
+  
+  
+  
+
+
+
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
